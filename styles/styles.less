@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@shade-color: rgb(18, 18, 18);
+@text-color: white;
+@menu-height: 44px;
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+div.container {
+
+    width: 100%;
+    margin-top: @menu-height;
+
+    h1 {
+        font-size: 2.4em;
+
+    }
+
+    p {
+        margin: 30px;
+        overflow-x: hidden;
+    }
+}
+
+.responsive-menu,
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: @menu-height;
+    display: flex;
+    margin: 0;
+    background-color: @shade-color;
+    color: @text-color;
+
+    h1 {
+        text-indent: 10px;
+        font-size: 1.6em;
+        font-weight: 200;
+        display: inline;
+        line-height: .4em;
+
+        &::after {
+            content: "";
+            padding-right: 10px;
+        }
+    }
+
+    .item-container {
+        width: 100%;
+    }
+
+    a {
+        @media (max-width: 768px) {
+            display: none;
+        }
+
+        line-height: @menu-height;
+        font-size: 1.2em;
+        display: block;
+        float: left;
+        height: 100%;
+        padding: 0 16px;
+        text-decoration: none;
+        color: @text-color;
+        text-align: center;
+        user-select: none;
+        transition: .3s;
+
+        &.close-menu::after {
+            font-size: 2em;
+            content: "\2039";
+            font-weight: 900;
+        }
+
+        &.collapse-menu::after {
+            font-size: 1.2em;
+            content: "\2716";
+        }
+
+        &.menu-hamburger {
+            float: right;
+
+            &::after {
+                content: "\2630";
+            }
+
+            display:none;
+
+            @media (max-width: 768px) {
+                display: block;
+            }
+        }
+
+        &:hover {
+            background-color: @text-color;
+            color: @shade-color;
+        }
+    }
+
+    .dropdown {
+        float: left;
+        overflow: hidden;
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: @menu-height;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px -8px black;
+            z-index: 1;
+
+            a {
+                float: none;
+                display: block;
+                text-align: left;
+                color: black;
+
+                &:hover {
+                    background-color: @shade-color;
+                    color: @text-color;
+                }
+            }
+
+            .nested {
+                position: relative;
+
+                .nested-content {
+                    display: none;
+                    position: absolute;
+                    left: 160px;
+                    top: 0;
+                    float: right;
+                    background-color: white;
+                    min-width: 160px;
+                    box-shadow: 0px 8px 16px -8px black;
+
+                }
+
+                &:hover .nested-content {
+                    display: block;
+                }
+
+                a.nested-title::after {
+                    content: "\25b8";
+                    float: right;
+                }
+            }
+        }
+
+        &:hover .dropdown-content {
+            display: block;
+        }
+
+        a.dropdown-title::after {
+            content: "\25be";
+            float: right;
+        }
+    }
+
+}
+
+.responsive-menu {
+    display: none;
+    transition: .5s;
+
+    @media (max-width: 768px) {
+        display: initial;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: @shade-color;
+        color: @text-color;
+        overflow: hidden;
+
+        a {
+            overflow: hidden;
+            display: block;
+            float: none;
+            height: initial;
+        }
+
+        .next-level {
+            overflow: hidden;
+            position: relative;
+            height: auto;
+            max-height: 0;
+            background-color: rgba(255, 255, 255, .5);
+            box-shadow: inset 0 20px 20px -20px black, inset 0 -20px 20px -20px black;
+            transition: .5s;
+
+            a {
+                color: black;
+            }
+        }
+    }
+
+}

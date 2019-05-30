@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script> -->
+  <title>Responsive Top Menu Test</title>
+</head>
+
+<body>
+  <script src="./JS/responsiveMenu.js"></script>
+  <!-- nav bar at the top -->
+  <div class="menu">
+    <h1>Title</h1>
+    <div class="item-container">
+      <div class="dropdown">
+        <a class="dropdown-title" href="#first">first</a>
+        <div class="dropdown-content">
+          <div class="nested">
+            <a class="nested-title" href="#">one</a>
+            <div class="nested-content">
+              <a href="#">nested</a>
+              <a href="#">nested</a>
+              <a href="#">nested</a>
+            </div>
+          </div>
+          <div class="nested">
+            <a class="nested-title" href="#">two</a>
+            <div class="nested-content">
+              <a href="#">nested 2</a>
+            </div>
+          </div>
+          <a href="#">three</a>
+        </div>
+      </div>
+      <a href="#second">second</a>
+      <a href="#third">third</a>
+      <a href="#fourth">fourth</a>
+      <a href="#fifth">fifth</a>
+    </div>
+    <a class="menu-hamburger" href="javascript:void(0);" onclick="openMenu(0, this);"></a>
+  </div>
+  <!-- end of nav bar -->
+  <!-- mobile stuff -->
+  <div class="responsive-menu">
+    <a class="close-menu" href="javascript:void(0);" onclick="closeMenu(0, this);"></a>
+    <a class="next-menu" href="javascript:void(0);" onclick="expandLevel(0, this);">first</a>
+    <div class="next-level">
+      <a href="#first">first</a>
+      <a class="next-menu" href="javascript:void(0);" onclick="expandLevel(1, this);">one</a>
+      <div class="next-level">
+        <a href="#">one</a>
+        <a href="#">nested</a>
+        <a class="collapse-menu" href="javascript:void(0);" onclick="collapseLevel(1, this);"></a>
+      </div>
+      <a href="#">two</a>
+      <a href="#">three</a>
+      <a class="collapse-menu" href="javascript:void(0);" onclick="collapseLevel(0, this);"></a>
+    </div>
+    <a href="#second">second</a>
+    <a href="#third">third</a>
+    <a href="#fourth">fourth</a>
+    <a href="#fifth">fifth</a>
+  </div>
+  <!-- end of mobile stuff -->
+  <!-- rest of the website -->
+  <div class="container">
+    <div id="first">
+      <h1>First</h1>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi excepturi error sunt. Recusandae quia pariatur
+        quisquam ut ipsa dicta voluptate quam iste sed quasi, enim neque possimus unde iure a.
+        Est nemo eveniet quibusdam, nobis exercitationem odio inventore laborum doloremque rerum illum dolores?
+        Excepturi facilis nisi cum voluptas expedita dolorem. Quae dolore dicta voluptas ullam voluptatum natus corporis
+        beatae assumenda.
+        Reprehenderit hic possimus, temporibus ipsam quibusdam, quae odio amet animi ipsum commodi corrupti aspernatur
+        pariatur eveniet nisi consequatur! Explicabo, beatae eligendi dicta in numquam inventore nesciunt corrupti quas
+        veritatis reiciendis.
+        Distinctio laborum quasi iure eius officiis? Esse deleniti asperiores sed ipsa velit quam nulla aliquid placeat
+        quis optio, sequi exercitationem quod iste autem magni eum, cupiditate, illo recusandae voluptas nostrum.
+        Amet quidem possimus mollitia nemo voluptates sunt ipsam ipsa iure asperiores fugiat saepe aspernatur, sed
+        consequuntur officia ut consequatur quaerat, doloremque ratione delectus voluptatem neque! Quam placeat id velit
+        culpa.
+      </p>
+    </div>
+    <div id="second">
+      <h1>Second</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit, rem. Omnis eaque earum repellat id autem ratione
+        accusamus nulla, ipsa maiores officiis hic eveniet perspiciatis et suscipit asperiores voluptate. Perferendis!
+        Veniam voluptatem sit dolor odio veritatis perferendis. Dolore repellat perspiciatis reiciendis aut dolor, ipsam
+        earum, doloribus assumenda officiis laudantium provident magni eius corporis molestias officia quam at!
+        Nesciunt, nobis modi?
+        Labore aperiam reiciendis impedit animi eveniet voluptas odio rem libero totam ipsa dolores ullam vero dolorum,
+        ad suscipit modi ab unde. Pariatur dolor inventore velit quisquam perferendis dolorem sequi quasi.
+        Alias, ducimus omnis beatae esse hic quasi magnam nesciunt, aut deleniti id magni quo porro, aliquid maxime
+        nobis corrupti? Asperiores facere a placeat quis porro exercitationem ipsum maxime quisquam? Aut?
+        Sequi rem placeat, earum necessitatibus nulla ipsam facere exercitationem possimus nihil deleniti officiis
+        perferendis sapiente laboriosam ipsa dignissimos aperiam! Molestiae commodi quia eius ipsa libero quibusdam
+        voluptate suscipit nulla repellat.
+      </p>
+    </div>
+    <div id="third">
+      <h1>Third</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus ducimus quaerat vitae? Aspernatur error
+        odio ut sit voluptates vel amet libero nostrum, harum placeat ducimus necessitatibus sunt dolorum, explicabo
+        unde?
+        Ipsum vero expedita quisquam? Iusto, labore nulla libero, illum deserunt quo quis quam consectetur ea nam,
+        voluptatem quaerat non magni eligendi? Maiores aliquam, doloremque labore est ipsam delectus saepe neque!
+        Tenetur sequi corrupti quibusdam et, omnis eligendi ut magni, velit impedit architecto maiores, facere
+        reiciendis nostrum quidem voluptatibus voluptatum quis repudiandae amet quo? Sapiente odio tempora magnam
+        dignissimos, temporibus natus.
+        Reprehenderit, veritatis dolorem? Laudantium ullam soluta sapiente impedit unde ducimus quaerat hic assumenda
+        debitis consequuntur itaque a molestiae repudiandae voluptas, quisquam libero fuga recusandae magnam aliquam
+        quasi ipsam? Ut, officia.
+        Ut blanditiis architecto deserunt, dicta ex non voluptatibus vero minus consequuntur modi, ipsam quod dolor
+        minima aut, optio necessitatibus aperiam quaerat sint reiciendis ipsum odit repudiandae reprehenderit! Sed, nam
+        voluptate!
+      </p>
+    </div>
+    <div id="fourth">
+      <h1>Fourth</h1>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus illo fugiat assumenda nostrum optio harum
+        sed aliquid voluptas dicta sapiente tempore sequi placeat iste, consequuntur quis dignissimos hic labore sit.
+        Ipsum facere aperiam ut expedita blanditiis itaque nobis, quam saepe veniam neque exercitationem dolores esse
+        aspernatur cupiditate architecto, animi est velit tempora molestiae autem corrupti necessitatibus nulla sunt
+        impedit. Ut!
+        Doloribus perferendis cum, quam a porro excepturi, recusandae atque quae doloremque maiores, sunt fuga optio
+        ratione labore ipsum modi molestiae incidunt assumenda similique adipisci explicabo dolore amet blanditiis
+        numquam. Quo.
+        Iusto cupiditate eaque perferendis libero asperiores in praesentium illum explicabo voluptates enim animi, illo
+        accusamus quibusdam suscipit ullam maxime harum eveniet laborum, assumenda ratione. Obcaecati dolor accusamus
+        illo cum voluptatum?
+        Rerum fugiat quasi quisquam, excepturi in delectus harum et architecto cum adipisci dolore est nam, maiores sint
+        placeat iusto ipsum porro provident temporibus id officiis dolor, laudantium eveniet! Molestias, necessitatibus!
+      </p>
+    </div>
+    <div id="fifth">
+      <h1>Fifth</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat consequuntur atque iste voluptates suscipit
+        molestias tenetur porro sunt est harum neque, in cumque nesciunt iusto facilis temporibus at perspiciatis
+        cupiditate.
+        Qui in culpa explicabo dignissimos fugit maiores, nulla voluptatem neque nesciunt itaque, voluptates nihil odio,
+        inventore dolores quos enim est dolorem. A molestiae alias, dolorem expedita veniam voluptatum quia asperiores?
+        Ipsam est qui totam hic quis impedit eveniet. Optio atque deleniti laboriosam non cupiditate tempora at, eos
+        quisquam id, voluptate quaerat ea totam distinctio corrupti! Similique maiores eligendi et atque?
+        Ipsum officia harum, debitis mollitia ratione explicabo quasi, delectus reiciendis sit, quidem sed quibusdam hic
+        fugit eaque commodi praesentium cumque dicta laudantium tempore. Enim commodi quo quam molestiae hic aperiam!
+        Veniam magnam consequuntur, debitis ratione nisi fugit saepe impedit nulla molestiae quidem laboriosam labore
+        culpa expedita nam consequatur aliquid maxime quos quisquam rerum atque vitae aspernatur vero facere? Suscipit,
+        corporis!
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>
